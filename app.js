@@ -7,11 +7,17 @@ const app = express();
 // definiamo la porta
 const port = 3000;
 
+// importo il router
+const postRouter = require(`./router/posts.js`);
+
+// utilizzo il router definire le varie rotte per i post
+app.use(`/post`, postRouter);
+
 // definizione rotta base
 app.get(`/`, (req, res) => {
     res.send(`Homepage`);
 })
 
 app.listen(port, () => {
-    console.log(`Server in ascolto nella porta ${port}`);
+    console.log(`Server in ascolto sulla porta ${port}`);
 })
