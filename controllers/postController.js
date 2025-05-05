@@ -1,4 +1,5 @@
 const posts = require (`../data/posts.js`);
+const { post } = require("../router/posts.js");
 
 // index
 function index (req, res){
@@ -18,7 +19,6 @@ function show (req, res) {
 
 // store
 function store (req, res) {
-    res.send(`Inserimento di un nuovo post`);
 }
 
 // update
