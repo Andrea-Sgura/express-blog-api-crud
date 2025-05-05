@@ -19,6 +19,9 @@ function show (req, res) {
 
 // store
 function store (req, res) {
+    // genero il nuovo id
+    // console.log(req.body);
+    const newId = posts[posts.length - 1 ].id + 1;
 }
 
 // update
