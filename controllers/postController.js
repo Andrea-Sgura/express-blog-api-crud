@@ -42,7 +42,21 @@ function store (req, res) {
 
 // update
 function update (req, res) {
-    res.send (`Modifica totale del post con id: ${req.params.id}`);
+    // recupero l'id
+    const id = parseInt(req.params.id)
+
+    // recupero il post tramite l'id passato
+    const post = posts.find(post => post.id === id);
+    
+    // Modifico i fati del post
+    post.title = req.body.title;
+    post.content = req.body.content;
+    post.image = req.body.image;
+    post.tags = req.body.tags;
+
+    // restituisco il post modificato
+    res.json(post);
+
 }
 
 // modify
