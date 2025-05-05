@@ -33,6 +33,11 @@ function store (req, res) {
 
     // aggiungo l'oggetto all'array
     posts.push(newPost);
+
+    // imposto il codice di stato 201
+    res.status(201);
+
+    res.json(newPost);
 }
 
 // update
