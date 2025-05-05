@@ -22,6 +22,17 @@ function store (req, res) {
     // genero il nuovo id
     // console.log(req.body);
     const newId = posts[posts.length - 1 ].id + 1;
+
+    // creo il nuovo oggetto
+    const newPost = {
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    }
+
+    // aggiungo l'oggetto all'array
+    posts.push(newPost);
 }
 
 // update
