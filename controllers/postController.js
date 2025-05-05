@@ -33,7 +33,14 @@ function modify (req, res) {
 
 // destroy
 function destroy (req, res) {
-    res.send(`Cancellazione del post con id: ${req.params.id}`);
+    const id = parseInt(req.params.id);
+
+    const post = posts.find(post => post.id === id);
+
+    posts.splice(posts.indexOf(post), 1);
+
+    // restituisco il codice di stato 204
+    res.sendStatus(204);
 }
 
 module.exports = { index, show, store, update, modify, destroy};
